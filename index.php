@@ -1,7 +1,13 @@
+<?php
+require('./lib/config.inc.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NAGARI</title>
+  <title><?php echo $judul; ?></title>
+  <link rel="icon"
+      type="image/png"
+      href="<?php echo $vaficon; ?>">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -50,9 +56,9 @@
 <body>
   <div class="container" style="min-height: 450px;">
     <div class="jumbotron">
-      <p class='service-name'>Layanan Warga Mandiri</p>
-      <p class='service-abbr'>NAGARI</p>
-      <p class='service-user'>Desa ..... Kecamatan .... Kabupaten Semarang</p>
+      <p class='service-name'>Pelayanan Administrasi Mandiri Desa</p>
+      <p class='service-abbr'>P A M D E S</p>
+      <p class='service-user'><?php echo "$namadesa Kecamatan $kecamatan Kabupaten $kabupaten";  ?></p>
     </div>
     <div id="nav">
       <a href="./?hal=registrasi">Daftar !</a>
