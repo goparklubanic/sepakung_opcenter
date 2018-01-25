@@ -109,7 +109,8 @@ class balaiDesa extends dbcrud
   }
 
   function emgc($nik){
-    $sql = "SELECT * FROM SOSAlert ORDER BY id DESC LIMIT 10";
+    $sql = "SELECT * FROM SOSAlert WHERE nik = '$nik' && status !='selesai'
+            ORDER BY id DESC LIMIT 10";
     $qry = $this->transact($sql);
     while($r = $qry->fetch()){
       if($r['nik'] == $nik) {

@@ -159,7 +159,7 @@ insert into pildata (optGroup,optData) values
 ('st_kawin','Belum Kawin'),
 ('st_kawin','Cerai Hidup'),
 ('st_kawin','Cerai Mati'),
-('st_kawin','Kawin')
+('st_kawin','Kawin'),
 ('golDarah','A+'),
 ('golDarah','A-'),
 ('golDarah','AB+'),
@@ -185,7 +185,7 @@ CREATE TABLE `pengantar`(
   tanggal timestamp DEFAULT CURRENT_TIMESTAMP(),
   nik varchar(16) NOT NULL,
   keperluan tinytext,
-  status ('antri','cetak','batal') default 'antri',
+  status enum ('antri','cetak','batal') default 'antri',
   PRIMARY KEY (kd_permohonan)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -219,6 +219,26 @@ CREATE TABLE SOSAlert(
   lintang varchar(20) default '0.0000',
   status enum('antri','tanggap','selesai') default 'antri'
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS adminLog;
+CREATE TABLE adminLog(
+  id int(2) not null auto_increment primary key,
+  lastLogin timestamp default current_timestamp(),
+  uname varchar(16) DEFAULT NULL,
+  upass varchar(32) DEFAULT NULL,
+  nama varchar(40) DEFAULT NULL,
+  jabatan varchar(30) DEFAULT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- dump data adminLog --
+INSERT INTO adminLog (uname,upass,nama,jabatan) values
+('pamkades',md5('**pamkades-123456**'),'Pak Kades','Kepala Desa'),
+('pamsekdes',md5('**pamsekdes-123456**'),'Pak Sekdes','Sekretaris Desa'),
+('pamkaurbg',md5('**pamkaurbg-123456**'),'Pak Kaur Pembangunan','Kaur Pembangunan'),
+('pamkaurks',md5('**pamkaurks-123456**'),'Pak Kaur Kesra','Kaur Kesra'),
+('pamkasila',md5('**pamkasila-123456**'),'Pak Kasi Pelayanan','Kasi Pelayanan'),
+('pamkaurku',md5('**pamkaurku-123456**'),'Pak Kaur Keuangan','Kaur Keuangan');
+
 -- VIEWS --
 CREATE OR REPLACE VIEW vwLogin AS
 SELECT penduduk.nik, penduduk.nama_lengkap, penduduk.kelamin, penduduk.tg_lahir,

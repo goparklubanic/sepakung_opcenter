@@ -89,7 +89,7 @@ class dbcrud
 		foreach($rs[$row] AS $el=>$va){
 		echo "<td>".$va."</td>";
 		}
-	    echo "</tr>";
+      echo "</tr>";
 	  }
    }
 

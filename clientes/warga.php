@@ -6,7 +6,9 @@ $wrg = new warga();
 
 if($job == 'kulanuwun'){
   $dw = $wrg->kulanuwun($_POST['uname'],$_POST['upass']);
-
+  //$data = array('nik'=>$_POST['upass'],'nama'=>$_POST['uname']);
+  echo json_encode($dw);
+/*
   $nik = $dw['nik'];
   $nma = $dw['nama_lengkap'];
   $klm = $dw['kelamin'];
@@ -16,6 +18,7 @@ if($job == 'kulanuwun'){
 
   $kw = array('nik'=>$nik,'nama'=>$nma,'kelamin'=>$klm,'tgLahir'=>$lhr,'rt'=>$rt_,'rw'=>$rw_);
   echo json_encode($kw);
+  */
 }
 
 if($job == "nomoreq"){

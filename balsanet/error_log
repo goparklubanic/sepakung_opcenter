@@ -1,0 +1,2 @@
+[20-Jan-2018 04:03:00 UTC] PHP Fatal error:  Call to a member function sketList() on string in /home/klubaner/sepakung.klubaners.web.id/balsanet/balsa.mgmt.php on line 9
+[20-Jan-2018 05:41:48 UTC] PHP Warning:  Missing argument 1 for balaiDesa::emgc(), called in /home/klubaner/sepakung.klubaners.web.id/balsanet/balsa.mgmt.php on line 28 and defined in /home/klubaner/sepakung.klubaners.web.id/lib/class.balsanet.inc.php on line 82
